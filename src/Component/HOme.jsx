@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Display from './Display';
 import Footer from './Footer';
+
 const HOme = () => {
   const [latestcollection, setLatest] = useState(null);
   const [bestseller, setBest] = useState(null);
@@ -9,13 +10,8 @@ const HOme = () => {
       try {
         const data = await fetch('https://dummyjson.com/products?limit=100');
         const res = await data.json();
-        console.log(res);
-        const clothes = res.products.filter((product) =>
-          product.category.includes('mens-shirts') || product.category.includes('beauty')||product.category.includes('furniture')
-        );
-      
-        const shuffledClothes = clothes.sort(() => 0.8 - Math.random());
-        setLatest(shuffledClothes?.slice(0,10 ));
+       const shuffledClothes = res.products.sort(() => 0.8 - Math.random());
+        setLatest(shuffledClothes?.slice(14,24 ));
         const best = res?.products.sort((a, b) => b.price - a.price).slice(3, 8);
         setBest(best);
       }

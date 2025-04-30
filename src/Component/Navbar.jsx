@@ -12,7 +12,7 @@ const Navbar = () => {
       </div>
       <div className='flex gap-5 py-12'>
         <p onClick={()=>navigate('/')}>Home</p>
-        <p onClick={()=>navigate('/collecttion')}>Collection</p>
+        <p onClick={()=>navigate('/collection')}>Collection</p>
         <p>About us </p>
         <p>Contact</p>
        
