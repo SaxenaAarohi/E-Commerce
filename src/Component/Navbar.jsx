@@ -10,7 +10,7 @@ const Navbar = () => {
       <div>
        <img  src='https://c8.alamy.com/comp/2R4N8TT/online-mart-shopping-logo-design-grocery-store-shopping-logo-2R4N8TT.jpg' className=' h-[150px] w-[200px]'/>
       </div>
-      <div className='flex gap-5 py-12'>
+      <div className='flex gap-9 py-12'>
         <p onClick={()=>navigate('/')}>Home</p>
         <p onClick={()=>navigate('/collection')}>Collection</p>
         <p>About us </p>
