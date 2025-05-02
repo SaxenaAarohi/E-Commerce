@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import Display from './Display';
 import HOme from './HOme';
 import Shimmer from './Shimmer';
+
 const Collection = () => {
   const [active, setActive] = useState("");
   const [isloading, setload] = useState(false);

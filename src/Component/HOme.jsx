@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import Display from './Display';
 import Footer from './Footer';
+import Shimmer from './Shimmer';
 
 const HOme = () => {
   const [response, setRes] = useState("");
