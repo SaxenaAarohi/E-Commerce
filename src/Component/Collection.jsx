@@ -4,6 +4,7 @@ import HOme from './HOme';
 import Shimmer from './Shimmer';
 
 const Collection = () => {
+  const [isopen,setOopen]=useState(false);
   const [active, setActive] = useState("");
   const [isloading, setload] = useState(false);
   const [typeofdata, setType] = useState("Collectionn");
@@ -71,26 +72,32 @@ const Collection = () => {
   const datatoshow = isclick ? filteredarray : collection;
 
   return (
-    <div className='h-screen w-full flex mt-10' >
+    <div className='h-screen w-full flex  mt-10' >
 
       {/* filterside */}
-      <div className=' flex justify-center w-[20%] '>
-        <div className='w-[80%] '>
-          <div className='text-6xl'>
+      <div className=' flex justify-center relative w-[5px] md:w-[20%] '>
+        <div onClick={()=>setOopen(!isopen)}
+          className={`md:hidden text-4xl`}
+        >
+          ☰
+        </div>
+
+        <div className={`left-0 md:ml-0  md:bg-transparent z-20 absolute md:static bg-gray-600 md:text-black md:block text-white  overflow-hidden top-12 w-[150px] md:w-[80%] ${isopen?'block':'hidden' }`}>
+          <div className='text-xl md:text-6xl'>
             Filter
           </div>
-          <div className='flex flex-col pt-10  gap-y-9  text-4xl'>
+          <div className='flex flex-col pt-5 md:pt-10  gap-y-4 md:gap-y-9  text-xl md:text-2xl md:text-4xl'>
             {arr?.map((item, index) =>
-              <div onClick={() => getfilter(item, index)} className='flex  gap-5'>
+              <div onClick={() =>{setOopen(!isopen);getfilter(item, index)} } className='flex gap-5'>
 
                 {(active === index) ?
-                  <div>✅</div>
+                  <div className='text-sm md:text-4xl '>✅</div>
                   :
-                  <input className='h-9 w-9 rounded-lg' type='checkbox' />
+                  <input className='md:h-9 h-3 w-3 md:w-9 rounded-lg' type='checkbox' />
 
                 }
 
-                <p key={index} >{item}</p>
+                <p key={index} className='tetx-xl md:text-4xl ' >{item}</p>
               </div>
 
             )}
@@ -99,8 +106,8 @@ const Collection = () => {
       </div>
 
       {/* rightside */}
-      <div className='flex flex-col w-[80%]'>
-        <div className='text-7xl'>
+      <div className='flex flex-col w-full md:w-[80%]'>
+        <div className='text-3xl pl-5 md:text-7xl'>
           {typeofdata}
         </div>
         {!isloading ?

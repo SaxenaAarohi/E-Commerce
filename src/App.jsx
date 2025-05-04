@@ -9,7 +9,7 @@ const Collection = lazy(() => import("./Component/Collection"))
 
 function App() {
   return (
-    <>
+    <div className='cursor-pointer'>
       <Router>
         <Navbar />
         <Suspense fallback={<Shimmer/>}>
@@ -22,7 +22,7 @@ function App() {
       </Router>
 
 
-    </>
+    </div>
   )
 }
 
