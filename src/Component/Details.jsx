@@ -77,14 +77,13 @@ const Details = () => {
                     
                     <div className='md:block flex gap-5 mt-5'>
                         <p className='text-2xl md:text-5xl  md:pt-5 text-green-600'>{brand}</p>
-
                         <p className='flex bg-green-600 mt-0 md:mt-7  text-center text-xl md:text-3xl px-4 py-1 md:py-3 font-bold rounded-3xl w-24 md:w-32'>{rating}<img className='h-9 mr-4 w-9' src='https://png.pngtree.com/png-vector/20240125/ourmid/pngtree-white-star-png-png-image_11494271.png' /></p>
                     </div>
 
-                    <p className='text-green-600 pt-3 md:pt-6  text-xl md:text-3xl font-semibold'> Special price</p>
+                    <p className='text-green-600 pt-3 pb-2 md:pt-6  text-xl md:text-3xl font-semibold'> Special price</p>
 
-                    <div className='flex flex-row   gap-5'>
-                        <p className='font-bold text-4xl md:text-9xl  '>{price}$</p>
+                    <div className='flex flex-row  gap-5'>
+                        <p className='font-bold text-4xl md:text-9xl '>{price}$</p>
                         <p className='text-green-600 pt-0 md:pt-5  text-2xl md:text-6xl fort-semibold '>{discountPercentage}% off</p>
                     </div>
 
