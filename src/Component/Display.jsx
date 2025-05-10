@@ -1,24 +1,65 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
 
 const Display = ({ item, id }) => {
   const navigate = useNavigate();
 
-  return (
-    <div onClick={() => navigate(`/details/${id}`)} className="cursor:none group mt-2 md:mt-12 relative flex md:flex-col items-center space-y-4  p-3 md:p-4 w-[400px] md:w-[600px] transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-blue-100 rounded-xl shadow-md hover:shadow-lg">
+  function handlecart(){
+    if (!item || !item.id) return;
+    const cartItems={
+      ...item,
+      quantity : 1,
+    }
+   let previtem=localStorage.getItem("cart");
+   if(previtem){
+    previtem=JSON.parse(previtem);
 
-      <div className="md:h-[400px] h-[100px] w-[100px] md:w-full overflow-hidden rounded-lg">
+    const existingIndex = previtem.findIndex(i => i.id === cartItems.id);
+
+    if (existingIndex !== -1) {
+      previtem[existingIndex].quantity += 1;
+    } else {
+      previtem.push(cartItems);
+    }
+    localStorage.setItem("cart",JSON.stringify(previtem));
+   }
+   else{
+    localStorage.setItem("cart",JSON.stringify([cartItems]));
+   }
+   navigate('/cart');
+  }
+
+  return (
+    <div className="bg-white rounded-lg shadow-md p-4 w-[450px] hover:shadow-xl transition flex flex-col justify-between h-[900px]">
+      <div>
         <img
           src={item.images[0]}
           alt={item.title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-76 object-contain mb-3"
         />
+
+        <h2 className="font-semibold text-4xl mb-1 line-clamp-2">{item.title}</h2>
+        <p className="text-3xl text-gray-600 line-clamp-3 mb-2">{item.description}</p>
+
+        <div className="text-yellow-500 flex items-center text-lg mb-1">
+          {Array.from({ length: Math.round(item.rating || 0) }).map((_, index) => (
+            <FaStar key={index} />
+          ))}
+          <span className="ml-2 text-gray-700">({item.rating || 0})</span>
+        </div>
+
+        <p className="font-bold text-3xl mb-2">${item.price}</p>
       </div>
 
-      <p className="text-2xl font-semibold text-gray-800 truncate w-full text-center">{item.title}</p>
-
-      <p className="text-xl font-bold text-red-400">{item.price}$</p>
-
+      <div className="flex flex-col items-center mt-10 gap-4">
+        <button onClick={handlecart} className="bg-yellow-400 w-[80%] hover:bg-yellow-500 text-black py-2 rounded-xl text-2xl">
+          Add to Cart
+        </button>
+        <button className="bg-orange-500 w-[80%] hover:bg-orange-600 text-white py-2 rounded-xl text-2xl">
+          Buy Now
+        </button>
+      </div>
     </div>
   );
 };

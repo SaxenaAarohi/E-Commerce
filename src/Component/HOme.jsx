@@ -40,11 +40,12 @@ const HOme = () => {
   }, [response])
 
   return (
-    <div className='flex mt-5 flex-col h-full items-center '>
-      <div className='bg-gray-300 md:h-[700px] h-[200px] w-[85%]' ><Carousel/></div>
+    
+    <div className='flex  flex-col h-full items-center '>
+      <div className='bg-gray-300 md:h-[600px] h-[200px] w-full' ><Carousel/></div>
 
-      <p className='text-3xl md:text-7xl font-bold mt-16 text-left'>Latest Collection </p>
-      <div className='flex flex-wrap mt-5 justify-center'>
+      <p className='text-3xl md:text-7xl  font-bold mt-16 text-left'>Latest Collection </p>
+      <div className='flex mt-10 flex-wrap gap-x-6 w-[80%] gap-y-10 justify-center'>
         {shuffle && shuffle.length > 0 ? (
           shuffle?.map((item, index) => (
             <Display item={item} id={item.id} key={index} />
@@ -54,7 +55,7 @@ const HOme = () => {
       </div>
 
       <p className='text-3xl md:text-7xl font-bold mt-16 '>Best Seller</p>
-      <div className='flex md:flex-row flex-col mt-5 justify-center'>
+      <div className='flex md:flex-row gap-x-6 w-[80%] gap-y-10 flex-col mt-10 justify-center'>
         {bestshuffle && bestshuffle.length > 0 ? (
           bestshuffle?.map((item, index) => (
             <Display item={item} id={item.id} key={index} />

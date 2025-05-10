@@ -1,0 +1,22 @@
+export const productSuggestions = [
+  "Wireless Headphones",
+  "Water Bottle",
+  "Smartphone Case",
+  "Backpack",
+  "Sunglasses",
+  "Bluetooth Speaker",
+  "Notebook",
+  "LED Desk Lamp",
+  "Coffee Mug",
+  "Running Shoes",
+  "Yoga Mat",
+  "Wrist Watch",
+  "Laptop Stand",
+  "Power Bank",
+  "Foldable Table",
+  "Hair Dryer",
+  "Tote Bag",
+  "Vacuum Cleaner",
+  "Wall Clock",
+  "Face Moisturizer"
+];

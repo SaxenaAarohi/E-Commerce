@@ -45,7 +45,7 @@ const Details = () => {
                             <>
                                 <p>Loading...</p>
                             </>
-                        )
+                          )
                     }
                 </div>
 
@@ -76,7 +76,7 @@ const Details = () => {
                     <p className='text-left mt-5 md:mt-12 md:block hidden text-xl md:text-4xl '>{description}</p>
                     
                     <div className='md:block flex gap-5 mt-5'>
-                        <p className='text-2xl md:text-5xl  md:pt-5 text-green-600'>{brand}</p>
+                        <p className='text-2xl md:text-5xl  pt-5 text-green-600'>{brand}</p>
                         <p className='flex bg-green-600 mt-0 md:mt-7  text-center text-xl md:text-3xl px-4 py-1 md:py-3 font-bold rounded-3xl w-24 md:w-32'>{rating}<img className='h-9 mr-4 w-9' src='https://png.pngtree.com/png-vector/20240125/ourmid/pngtree-white-star-png-png-image_11494271.png' /></p>
                     </div>
 
