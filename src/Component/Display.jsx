@@ -1,33 +1,39 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../slice/Cartslice';
 
 const Display = ({ item, id }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  
+  function handlecart() {
+    dispatch(addtocart(item));
+    alert("added");
+    // if (!item || !item.id) return;
+    // const cartItems={
+    //   ...item,
+    //    quantity : 1,
+    // }
+    //  let previtem=localStorage.getItem("cart");
+    //  if(previtem){
+    //   previtem=JSON.parse(previtem);
 
-  function handlecart(){
-    if (!item || !item.id) return;
-    const cartItems={
-      ...item,
-      quantity : 1,
-    }
-   let previtem=localStorage.getItem("cart");
-   if(previtem){
-    previtem=JSON.parse(previtem);
+    //   const existingIndex = previtem.findIndex(i => i.id === cartItems.id);
 
-    const existingIndex = previtem.findIndex(i => i.id === cartItems.id);
+    //   if (existingIndex !== -1) {
+    //     previtem[existingIndex].quantity += 1;
+    //   } else {
+    //     previtem.push(cartItems);
+    //   }
+    //   localStorage.setItem("cart",JSON.stringify(previtem));
+    //  }
+    //  else{
+    //   localStorage.setItem("cart",JSON.stringify([cartItems]));
+    //  }
+    //  navigate('/cart');
 
-    if (existingIndex !== -1) {
-      previtem[existingIndex].quantity += 1;
-    } else {
-      previtem.push(cartItems);
-    }
-    localStorage.setItem("cart",JSON.stringify(previtem));
-   }
-   else{
-    localStorage.setItem("cart",JSON.stringify([cartItems]));
-   }
-   navigate('/cart');
   }
 
   return (

@@ -42,7 +42,7 @@ const HOme = () => {
   return (
     
     <div className='flex  flex-col h-full items-center '>
-      <div className='bg-gray-300 md:h-[600px] h-[200px] w-full' ><Carousel/></div>
+      <div className='bg-gray-300 md:h-[700px] h-[200px] w-full' ><Carousel/></div>
 
       <p className='text-3xl md:text-7xl  font-bold mt-16 text-left'>Latest Collection </p>
       <div className='flex mt-10 flex-wrap gap-x-6 w-[80%] gap-y-10 justify-center'>
@@ -63,8 +63,7 @@ const HOme = () => {
           <Shimmer />
         )
         }
-      </div>
-      
+      </div>     
       <Footer />
     </div>
   )
