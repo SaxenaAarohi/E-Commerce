@@ -106,10 +106,7 @@ const totalquantity = useMemo(() => {
   <p className="text-left font-medium text-sm">Total Qty: {totalquantity}</p>
 </div>
 
-
-      {/* Summary */}
-     {/* Ultra-Compact Summary */}
-<div className="bg-white p-3 rounded-lg shadow w-full max-w-xs space-y-2 text-sm">
+<div className="hidden md:block bg-white p-3 rounded-lg shadow w-full max-w-xs space-y-2 text-sm">
   <h3 className="text-base font-semibold text-gray-800 border-b pb-1">Summary</h3>
 
   <div className="text-gray-700 space-y-1">
