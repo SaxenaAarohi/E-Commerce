@@ -16,21 +16,21 @@ const Carousel = () => {
     setCurrentIndex((currentIndex + 1) % images.length);
   };
   return (
-    <div className="relative w-full h-full mx-auto overflow-hidden rounded-xl shadow-lg">
+    <div className="relative w-full h-full  overflow-hidden rounded-xl shadow-lg">
       <img
         src={images[currentIndex]}
         alt={`Slide ${currentIndex + 1}`}
-        className="w-full h-full object-cover transition duration-500"
+        className=" object-cover w-full h-full transition duration-500"
       />
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white text-3xl px-2 py-1 rounded-full"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2  text-black text-3xl px-2 py-1 rounded-full"
       >
         ❮
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white text-3xl px-2 py-1 rounded-full"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2  text-black text-3xl px-2 py-1 rounded-full"
       >
         ❯
       </button>
