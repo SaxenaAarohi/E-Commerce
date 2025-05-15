@@ -52,7 +52,7 @@ const totalquantity = useMemo(() => {
         <span className="text-yellow-400 font-bold text-xl">Amazon</span>
       </div>
 
-    <div className="flex relative w-full md:w-[30%] items-center">
+    <div className="flex relative w-full md:w-[30%] ml-4 md:ml-0 items-center">
   <input
     type="text"
     value={inp}
