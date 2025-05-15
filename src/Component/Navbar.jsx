@@ -48,7 +48,7 @@ const totalquantity = useMemo(() => {
   return (
     <nav className="bg-[#131921] text-white px-2 flex justify-between items-center h-12">
 
-      <div className="flex items-center ml-1 space-x-2 cursor-pointer">
+      <div className="flex items-center ml-0 md:ml-1 space-x-2 cursor-pointer">
         <span className="text-yellow-400 font-bold text-xl">Amazon</span>
       </div>
 
