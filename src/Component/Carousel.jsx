@@ -2,8 +2,9 @@ import React from 'react'
 import { useState } from 'react';
 const Carousel = () => {
     const images = [
+       'https://img.freepik.com/free-vector/horizontal-sale-banner-template_23-2148897328.jpg?semt=ais_hybrid&w=740',
         'https://m.media-amazon.com/images/G/31/Events/img25/Nimesh/May_ART_Deals_Header__PC_8PM.jpg',
-        'https://img.freepik.com/free-vector/horizontal-sale-banner-template_23-2148897328.jpg?semt=ais_hybrid&w=740',
+       
         '	https://m.media-amazon.com/images/G/31/Prime/PostPEA/BB1/MAYART-BB_PSE-21.jpg',
       ];
       const [currentIndex, setCurrentIndex] = useState(0);
