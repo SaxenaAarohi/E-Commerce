@@ -17,9 +17,7 @@ function App() {
     <div className='bg-[#f3f3f3] cursor-pointer'>
       <Router>
         <Appcontext.Provider value={{ user }}>
-
-
-
+          
           <Navbar />
 
           <Routes>

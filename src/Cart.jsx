@@ -16,8 +16,6 @@ function handlequantity(id, quantity) {
   dispatch(updatequantity({ id, quantity: q }));
 }
 
-
-
   const shipping = 10.00;
 
  const total = useMemo(() => {
@@ -90,7 +88,7 @@ const totalquantity = useMemo(() => {
         </div>
 
         <button
-          onClick={() => handleremove(item.id, item.product.id)}
+          onClick={() => handleremove( item.product.id)}
           className="bg-yellow-400 px-2 py-1 rounded text-xs"
         >
           Remove
